@@ -130,6 +130,17 @@ def create_app(config=None, dependencies=None):
         except Exception as exc:
             return unavailable("postgres", exc)
 
+    @app.route('/healthz', methods=['GET'])
+    def health_check():
+        try:
+            db_ok = deps.database_ready()
+            redis_ok = deps.redis_ready()
+            if db_ok and redis_ok:
+                return {"status": "healthy"}, 200
+            return {"status": "unhealthy"}, 500
+        except Exception as e:
+            return {"status": "unhealthy", "error": str(e)}, 500
+
     @app.get("/counter")
     def counter():
         try:
