@@ -1,12 +1,15 @@
-# AI usage disclosure
+# AI Assistance & Verification Log
 
-Write None if no AI was used. Otherwise record each use:
+## Tools Used
+- **Gemini / AI Collaborator**: Used for code structure generation, workflow syntax debugging, script refinement, and document templating.
 
-- Tool/model:
-- Purpose:
-- Files or decisions affected:
-- What you changed or rejected:
-- How you independently verified it:
-- Related commit:
+## Purpose & Affected Files
+- `restore.sh`: Refined SQL clean logic to fix constraint errors.
+- `.github/workflows/ci.yml`: Scaffolded GitHub Actions workflow syntax for Docker Compose integration.
+- `troubleshooting.md` & Documentation: Structured incident analysis and architectural rationale.
 
-You may use AI and external resources. You must understand and demonstrate the work.
+## Verification Methodology
+- Every script and command generated or suggested by AI was locally executed and verified using:
+  1. `validate.py` testing script.
+  2. Manual `docker compose` teardowns and rebuilds.
+  3. Live pipeline testing on GitHub Actions (Run ID verified: `Success`).
