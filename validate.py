@@ -4,9 +4,9 @@ import sys
 import urllib.request
 
 CHECKS = [
-    ("API Root (/)", "http://localhost:8080/"),
-    ("Health Check (/healthz)", "http://localhost:8080/healthz"),
-    ("Readiness Check (/ready)", "http://localhost:8080/ready"),
+    ("API Root (/)", "http://localhost:8090/"),
+    ("Health Check (/healthz)", "http://localhost:8090/healthz"),
+    ("Readiness Check (/ready)", "http://localhost:8090/ready"),
 ]
 
 def run_checks():
